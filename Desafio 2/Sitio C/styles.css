@@ -1,0 +1,48 @@
+#logo{
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+    letter-spacing: 15px;
+    color: #C05497;
+    font-weight: lighter;
+}
+
+h2{
+    font-size: 17px;
+    letter-spacing: 7px;
+    color: #C05497;
+}
+
+h1, h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p{
+    color: #3262A6;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+div > img{
+    margin-bottom: 5px;
+    width: 350px;
+}
+
+#animalKingdomImagen, #popCenturyImagen{
+    float: right;
+    margin-left: 12px;
+}
+
+#caribbeanBeachImagen{
+    float: left;
+    margin-right: 12px;
+}
+
+#mickeyMinnieImagen{
+    width: 100%;
+}
+
