@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Afilicion</title>
+    <link rel="stylesheet" href="desafio3.2.css">
+    <!-- <link rel="stylesheet" href="desafio3.1.css"> -->
+    <!-- <link rel="stylesheet" href="desafio3.3.css"> -->
+</head>
+
+<body>
+
+    <h1> Vení al Gym! 💪</h1>
+
+    <form action="https://postman-echo.com/post" method="post">
+
+     
+        <fieldset class="datosPersonales">
+            <legend>🧍‍♂️ <span>D</span>atos <span>P</span>ersonales 👀</legend>
+
+            <label for="nombre">Nombre: *</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+
+            <label for="apellido">Apellido: *</label>
+            <input type="text" id="apellido" name="apellido" required>
+            <br>
+
+            <label for="documento">Documento: *</label>
+            <input type="text" id="documento" name="documento" required>
+            <br>
+
+            <label for="nacionalidad">Nacionalidad: *</label>
+            <select id="nacionalidad" name="nacionalidad" required>
+                <option value="">- Seleccionar -</option>
+                <option value="argentina">Argentina</option>
+                <option value="uruguay">Uruguay</option>
+                <option value="chile">Chile</option>
+                <option value="otro">Otro</option>
+            </select>
+            <br><br>
+
+            <label for="descripcion">Contanos un poco de vos...</label><br>
+            <textarea id="descripcion" name="descripcion" rows="3" cols="40"></textarea>
+            <br>
+
+        <div class="texto">  
+            <label>Sexo: *</label><br>
+            <input type="radio" id="femenino" name="sexo" value="femenino" required>
+            <label for="femenino">Femenino</label>
+
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+
+            <input type="radio" id="otro" name="sexo" value="otro">
+            <label for="otro">Otro</label>
+        </div> 
+        </fieldset>
+
+        <br>
+    
+
+        <div class="separador">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+      
+    
+       
+        <fieldset class="datosPersonales">
+            <legend>📱 <span>D</span>atos de <span>C</span>ontacto ✉️</legend>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Código de área y número">
+            <br><br>
+
+            <label for="email">Dirección de correo electrónico: *</label>
+            <input type="email" id="email" name="email" placeholder="Ej: mail@gmail.com" required>
+        </fieldset>
+
+        <br>
+        
+
+        <div class="separador">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        
+
+       
+        <fieldset class="actividades">
+            <legend>🚴 <span>A</span>ctividades 🏋️</legend>
+
+            <p>Por favor, indicá cuáles actividades te interesan.</p>
+
+            <strong>Sede Palermo:</strong>
+            <br>
+            <input type="checkbox" id="basquet_p" name="palermo[]" value="basquet">
+            <label for="basquet_p">Básquet</label>
+
+            <input type="checkbox" id="boxeo_p" name="palermo[]" value="boxeo">
+            <label for="boxeo_p">Boxeo</label>
+
+            <input type="checkbox" id="futbol_p" name="palermo[]" value="futbol">
+            <label for="futbol_p">Fútbol</label>
+
+            <input type="checkbox" id="tenis_p" name="palermo[]" value="tenis">
+            <label for="tenis_p">Tenis</label>
+
+            <br><br>
+
+            <strong>Sede Rosario:</strong>
+            <br>
+            <input type="checkbox" id="basquet_r" name="rosario[]" value="basquet">
+            <label for="basquet_r"> Básquet</label>
+
+            <input type="checkbox" id="futbol_r" name="rosario[]" value="futbol">
+            <label for="futbol_r">Fútbol</label>
+
+            <input type="checkbox" id="rugby_r" name="rosario[]" value="rugby">
+            <label for="rugby_r">Rugby</label>
+
+            <input type="checkbox" id="voley_r" name="rosario[]" value="voley">
+            <label for="voley_r">Vóley</label>
+        </fieldset>
+
+        <br>
+
+
+
+        <input type="checkbox" id="condiciones" name="condiciones" required>
+        <label for="condiciones">Acepto las condiciones *</label>
+        <br>
+
+        <input type="checkbox" id="novedades" name="novedades">
+        <label for="novedades">Deseo recibir novedades</label>
+
+        <p>*: campo obligatorio.</p>
+
+
+
+        <div class="botonera">
+            <input type="submit" value="Iniciar afiliación">
+            <input type="reset" value="Restablecer">
+
+        </div>
+
+    </form>
+
+    
+
+
+</body>
+</html>
