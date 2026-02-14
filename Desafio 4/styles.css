@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitcount+Grid+Double:wght@100..900&family=Bungee&family=Changa+One:ital@0;1&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Jaini&family=Luckiest+Guy&display=swap');
+
+body{
+    background-color: #646F4B;
+}
+
+main{
+    background-color: #DEF6CA;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 10px;
+}
+
+div section p{
+    text-align: justify;
+    font-family: Google Sans;
+    color: #646F4B;
+}
+
+div section{
+    background-color: #EF9CDA;
+    margin: 20px 20px;
+    border-radius: 5px;
+    padding: 30px;
+
+}
+
+div section img{
+    width: 100%;
+}
+
+div h2{
+    color: #646F4B;
+    font-family: Changa One;
+    letter-spacing: 7px;
+    font-weight: 100;
+    font-size: 30px;
+    margin: 30px 20px 30px 20px;
+    text-decoration: underline;
+}
+
+div section h3{
+    font-size: 20px;
+    color: #DEF6CA;
+    font-family: Changa One;
+    font-weight: 100;
+    border-bottom: 2px solid #DEF6CA;
+    text-align: left;
+    padding-bottom: 10px;
+    margin: 0 0 15px 0;
+}
+
+
+header h1{
+    background: radial-gradient(#EF9CDA, #522B47);
+    width: 50%;
+    margin: 40px auto;
+    text-align: center;
+    padding: 10px 0;
+    color: #DEF6CA;
+    font-family: Bungee;
+    font-size: 50px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+section button{
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(#522B47, #EF9CDA);
+    font-family: Google Sans;
+    font-weight: bold;
+    color: #522B47;
+
+}
+
+footer{
+    background: radial-gradient(#EF9CDA, #522B47);
+    width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+button:hover{
+    background: none;
+    background-color: #522B47;
+    color: #EF9CDA;
+    cursor: pointer;
+}

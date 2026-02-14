@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    background-color: #E11364;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    background-color: #BC105C;
+    width: 65%;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 5px;
+}
+
+div section p{
+    text-align: left;
+    font-size: 12px;
+}
+
+div section{
+    background-color: #FAFAFB;
+    margin: 30px 20px;
+    border-radius: 5px;
+    padding: 25px 15px;
+
+}
+
+div section img{
+    width: 100%;
+}
+
+.cards-header h2{
+    color: #FAFAFB;
+    font-size: 22px;
+    text-align: left;
+    margin: 30px 20px 30px 20px;
+    font-weight: 600;
+
+
+}
+
+div section h3{
+    font-size: 17px;
+    color: #BC105C;
+    font-weight: 700;
+    border-bottom: 2px dotted #BC105C;
+    text-align: right;
+    margin: 0 0 15px 0;
+}
+
+
+header h1{
+    background-color: #BC105C;
+    width: 65%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 10px 0;
+    color: #DEF6CA;
+    font-size: 40px;
+    font-weight: 700;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+    box-sizing: border-box;
+
+}
+
+section button{
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #2C8F20;
+    color: #FAFAFB;
+    font-size: 18px;
+    border: none;
+
+}
+
+footer{
+    background-color: #E96093;
+    width: 65%;
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #FAFAFB;
+    font-size: 13px;
+
+}
+
+button:hover{
+    background-color: #BC105C;
+    color: #DEF6CA;
+    cursor: pointer;
+}
