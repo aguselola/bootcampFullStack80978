@@ -1,0 +1,77 @@
+body{
+    font-family: Verdana, Arial, sans-serif;
+}
+
+header img{
+    width: 100%;
+}
+
+header nav ul li{
+    list-style: none;
+    font-size: 22px;
+    padding-left: 4px;
+    color: #EF743A;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav ul li a{
+    color: #EF743A;
+    font-weight: bold;
+}
+
+header ul li:not(:last-child)::after {
+  content: "-";
+  margin-left: 8px;
+}
+
+h3{
+    background-color: #84665B;
+    color: #E2D5D0;
+}
+
+h2, p, li{
+    color: #84665B;
+}
+
+h2{
+    font-size: 35px;
+}
+
+section ul li a{
+    color: #EF743A;
+    font-weight: bold;
+}
+
+section ul li #la-nacion{
+    color: #73C2D3;
+}
+
+section ul li #pag12{
+    color: #EE6A76;
+}
+
+section #elegirnos{
+    color: #D5AE3C;
+}
+
+footer p{
+    background-color: black;
+    height: 100px;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.negrita {
+    font-weight: bold;
+}
