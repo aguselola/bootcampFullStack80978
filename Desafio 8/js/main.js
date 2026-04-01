@@ -14,7 +14,7 @@ function agregar(e){
     const textArearRem = document.querySelector("textarea")
 
     if (e == 0){
-        divDestino.innerHTML = textArearRem.value
+        divDestino.innerHTML += textArearRem.value
     }
     else if (e == 1){
         for(let i = 1; i <= 5; i++){
@@ -29,14 +29,24 @@ function agregar(e){
     else if (e == 3){
         let cantidad 
         do {
-            cantidad = parseInt(prompt("Ingrese la cantidad de veces que quiere que se agregue el texto"))
-            if (!Number.isFinite(cantidad) || cantidad <= 0) {
-              alert("Ingrese un número válido");
+            let input = prompt("Ingrese la cantidad de veces que quiere que se agregue el texto");
+
+            
+            if (input === null) {
+                return; 
             }
-          } while (!Number.isFinite(cantidad) || cantidad <= 0);
-          for (let i = 1; i <= cantidad; i++) {
+
+            cantidad = parseInt(input);
+
+            if (isNaN(cantidad) || cantidad <= 0) {
+                alert("Ingrese un número válido");
+            }
+
+        }while (isNaN(cantidad) || cantidad <= 0);
+        
+        for (let i = 1; i <= cantidad; i++) {
             divDestino.innerHTML += textArearRem.value;
-          }
+        }
     }
     
     
