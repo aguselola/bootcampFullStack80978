@@ -84,7 +84,7 @@ const darResultado = () => {
         resultado = numero1 - parseFloat(display.innerText)
         display.innerText = resultado
 
-    }else if(operacion === "X"){
+    }else if(operacion === "x"){
         resultado = numero1 * parseFloat(display.innerText)
         display.innerText = resultado
 
