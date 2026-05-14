@@ -1,0 +1,134 @@
+.carrito{
+
+    width: 85%;
+    margin: 80px auto;
+    background-color: #D1B77D;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow:
+    0 10px 30px rgba(116,51,9,.12);
+    backdrop-filter: blur(5px);
+}
+
+.carrito h4{
+    text-align: center;
+    color: #743309;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-family: "Playfair Display", serif;
+    text-shadow:
+    0 0 10px rgba(209,183,125,.4);
+}
+
+.productoCarrito{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background-color: rgba(255,255,255,.18);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.productoCarrito:hover{
+
+    transform: translateY(-5px);
+    box-shadow:
+    0 10px 20px rgba(116,51,9,.15);
+}
+
+.productoCarrito img{
+
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.infoProducto{
+    flex: 1;
+}
+
+.infoProducto h3{
+
+    color: #743309;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.infoProducto p{
+    color: #8B5E3C;
+    margin-bottom: 10px;
+}
+
+.infoProducto span{
+
+    color: #5A2506;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.productoCarrito button{
+    background: linear-gradient(
+        135deg,
+        #743309,
+        #8B4513
+    );
+    color: #F8F2EA;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.productoCarrito button:hover{
+
+    transform: scale(1.05);
+    box-shadow:
+    0 0 15px rgba(209,183,125,.5);
+}
+
+.total{
+
+    margin-top: 50px;
+    text-align: center;
+}
+
+.total h3{
+
+    color: #743309;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.finalizar{
+    background: linear-gradient(
+        135deg,
+        #8B4513,
+        #A65A1B
+    );
+    color: #fff;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 999px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.finalizar:hover{
+
+    transform: translateY(-3px);
+    box-shadow:
+    0 0 20px rgba(116,51,9,.35);
+}

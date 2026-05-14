@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECommerce (contacto)</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="./index.html">Inicio</a> </li>
+                <li> <a href="./alta.html">Alta</a> </li>
+                <li> <a href="./carrito.html">Carrito</a> </li>
+                <li> <a href="./contacto.html">Contacto</a> </li>
+                <li> <a href="./nosotros.html">Nosotros</a> </li>
+                <li> <a href="./otra.html">Otra</a> </li>
+            </ul>
+        </nav>
+        <div id="headerLogoBarra">
+            <div id="logo"><img src="./css/img/logo arcana.PNG" alt="logo"></div>
+            <div id="barra-busqueda">
+                <form action="#">
+                    <label for="buscar"><img src="./css/img/lupita.png" alt="lupa para buscar"></label>
+                    <input type="text">
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
+            <div id="boton-carrito"><a href="./carrito.html"><img src="./css/img/carritochagpt.png" alt=""></a></div>        
+        </div>
+    </header>
+
+    <main>
+        <h1>Conectemos</h1>
+
+        <div id="formulario">
+
+            <p>✦¿Tenes dudas, consultas o queres hacer un pedido especial?✦</p>
+            <p>Escribinos, estamos para ayudarte.</p>
+    
+            <img src="./css/img/separador.png" alt="separador" id="separador">
+            
+            <form id="formularioContacto">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" name="nombre" minlength="2" maxlength="50" placeholder="Tu nombre" required>
+                </div>
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input id="apellido" type="text" name="apellido" minlength="2" maxlength="50" placeholder="Tu apellido" required>
+                </div>
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input id="telefono" type="tel" name="telefono" title="Ingresa un telefono válido" pattern="[0-9]+" maxlength="9" placeholder="Ej: 098 123 456" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                <div>
+                    <label for="consulta">Consulta</label>
+                    <textarea id="consulta" name="consulta" minlength="10" maxlength="2000" placeholder="Escribe tu consulta..." required></textarea>                
+                </div>
+                <button type="submit">✦ Enviar mensaje ✦</button>
+                
+            </form>
+            <img src="./css/img/separador.png" alt="separador" id="separador">
+        </div>
+    </main>
+
+    <footer>
+        <h3>✦Confía en tu intuición, el universo conspira a tu favor✦</h3>
+        
+    </footer>
+
+    <script src="js/contacto.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
