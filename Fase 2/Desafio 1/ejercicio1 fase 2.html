@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 - Fase 1</title>
+    <style>
+        h2 {
+            color: blue;
+        }
+        main {
+            height: 50vh;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Adaptar esta página web para que permita cambiar el color de fondo del contenedor main. Los colores disponibles serán: rojo, verde, azul y negro y se seleccionarán desde un array. Se dispondrá de dos botones para avanzar y retroceder respectivamente la selección del color. En caso de llegar al final se comenzará desde el principio y viceversa. No utilizar id ni clases para referenciar los botones.
+        El color seleccionado se indicará por debajo de los botones en un elemento h2 con texto en blanco (NO se deberá cambiar el color de este mismo texto).
+        Utilizar contructores de variables de ES6 y arrow function y registro de eventos con addEventListener. Permitir incorporar más colores al array, sin hacer modificaciones al código.
+    </h2>
+    <hr>
+
+    <main>
+        <button>Cambiar Color -</button>
+        <button>Cambiar Color +</button>
+        <h2></h2>
+    </main>
+    
+    <script>
+
+        const coloresFondo = ['red','green', 'blue', 'black']
+        const coloresTexto = ['rojo', 'verde', 'azul', 'negro']
+
+        const cambiarMenos = document.querySelectorAll('button')[0]
+        const cambiarMas = document.querySelectorAll('button')[1]
+        const main = document.querySelector('main')
+        const h2 = document.querySelectorAll('main h2')
+        
+        let indice = 0
+        main.style.backgroundColor = coloresFondo[indice]
+        
+        h2.textContent = coloresTexto[indice]
+        h2.style.color = 'white'
+        h2.style.textTransform = 'capitalize'
+        
+
+        const aplicarColor = () =>{
+            main.style.backgroundColor = coloresFondo[indice]
+            h2.textContent = coloresTexto[indice]
+        }
+
+        cambiarMas.addEventListener('click', () =>{
+            
+            indice = indice + 1
+            if(indice >= coloresFondo.length){
+                indice = 0
+            }
+            aplicarColor()
+        })
+        
+        
+        cambiarMenos.addEventListener('click', () =>{
+            indice = indice - 1
+
+            if(indice<= -1){
+                indice = coloresFondo.length-1
+            }
+            aplicarColor()
+        })
+        
+        
+    </script>
+
+</body>
+</html>

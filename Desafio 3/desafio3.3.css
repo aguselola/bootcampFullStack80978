@@ -1,0 +1,233 @@
+/* Estilo del h1 con tipografía y sombras decorativas */
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 45px;
+    position: relative;
+    box-shadow:
+    0 -25px 0 0px #5f7f75,
+    0  25px 0 0px #5f7f75;
+    margin-bottom: 60px;
+    margin-top: 60px;
+    
+}
+
+/* PARA ALINEAR Y SEPARA LOS INPUTS Y LABELS*/
+fieldset label,
+fieldset input,
+fieldset textarea {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* PARA AJUSTAR ANCHO GENERAL Y COLOR DE FONDO */
+body{
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #1F2023;
+
+}
+
+/* PARA ALINEAR TITULO Y CONTENIDO DEL FORM */
+h1, fieldset{
+    text-align: center;
+}
+
+/* PARA AJUSTAR ANCHO DE ELEMENTOS DENTRO DEL FORM */
+input, select{
+    width: 400px;
+}
+
+/* COLOR DE LETRA DE CONDICIONES, LEGEND Y TITULO */
+label[for="condiciones"],
+label[for="novedades"],
+form > p,
+legend,
+h1{
+    color: white;
+}
+
+/* PARA ACOMODAR LOS INPUTS Y LABELS DE LOS CHECKBOX Y RADIO */
+input[type="radio"],
+label[for="femenino"], 
+label[for="masculino"], 
+label[for="otro"],
+label[for="basquet_p"],
+label[for="boxeo_p"],
+label[for="futbol_p"],
+label[for="tenis_p"],
+label[for="basquet_r"],
+label[for="futbol_r"],
+label[for="rugby_r"],
+label[for="voley_r"],
+input[type="checkbox"],
+label[for="novedades"],
+label[for="condiciones"],
+input[type="submit"],
+input[type="reset"]{
+    display: inline;
+    width: auto;
+}
+
+/* PARA ALINEAR TEXTO DE ACTIVIDADES Y CONDICIONES */
+#condiciones, 
+#novedades,
+label[for="condiciones"],
+label[for="novedades"],
+form > p, 
+.actividades, 
+legend{
+    text-align: left;
+}
+
+/* PARA ALINIAR TEXTO DENTRO DEL INPUT TEXT */
+::placeholder{
+    text-align: right;
+}
+
+/* PARA COLOR DE FONDO, ACOMODAR EL FIELDSET Y TIPOGRAFIA */
+fieldset{
+    background-color: #D6E2DE;
+    padding: 20px 0 30px 0;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+
+/* Estilo visual del legend (título de cada fieldset) */
+legend{
+    background-color: #4D6D63;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding: 7px;
+    margin-left: 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Color de fondo de los botones */
+input[type="submit"], input[type="reset"]{
+    background-color: #2B3D37;
+}
+
+/* SEPARADORES */
+.separador {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.separador span {
+    width: 15px;
+    height: 15px;
+    background-color: #a5bfb3;   
+    border-radius: 50%;
+}
+
+/* BOTONES DE RESET Y SUBMIT */
+.botonera input {
+    background-color: #2f3e3b;
+    color: #a5c2b7;
+    border: 2px solid #a5c2b7;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.botonera {
+    text-align: center;
+}
+
+.botonera input {
+    display: inline-block;
+    width: auto;
+    margin: 20px;
+}
+
+/* Ancho, padding y estilo de los campos de texto */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #2f3e3b;
+}
+
+/* Aumenta tamaño de las letras dentro del legend */
+legend > span{
+    font-size: 22px;
+}
+
+/* Tipografía para la sección de condiciones finales */
+label[for="condiciones"],
+label[for="novedades"],
+form > p{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Separación entre checkboxes finales */
+label[for="condiciones"],
+label[for="novedades"]{
+    margin: 10px 0;
+}
+
+/* Resalta el texto de campo obligatorio */
+form > p{
+    font-weight: bold;
+}
+
+/* Margen entre labels dentro de actividades */
+.actividades> label{
+    margin: 15px 0 15px 0;
+}
+
+/* Pequeño margen entre checkboxes de actividades */
+.actividades> input{
+    margin: 0 3px 0 3px;
+}
+
+/* Ajuste del legend dentro de actividades */
+.actividades > legend{
+    margin: 0;
+}
+
+/* Padding interno de la sección actividades */
+.actividades{
+    padding: 20px;
+}
+
+/* Permite que el textarea solo se agrande verticalmente */
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+
+/* PSEUDOCLASES */
+input:focus{
+    background-color: #4D6D63;
+}
+
+textarea:focus{
+    background-color: #4D6D63;
+}
+
+fieldset:focus-within legend{
+    background-color: #2B3D37;
+}
+
+fieldset:focus-within{
+    background-color: #A6C1B9;
+}
+
+.botonera input:hover {
+    background-color: #a5c2b7;
+    color: #2f3e3b;
+}

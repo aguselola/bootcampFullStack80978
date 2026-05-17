@@ -1,0 +1,243 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* BODY */
+body {
+    background: linear-gradient(#ccc903, #050607) ;
+    color: white;
+    padding: 40px 0;
+}
+
+/* TITULO */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+    position: relative;
+}
+h1::before,
+h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 8px;
+   background: #050607 ;
+    border-radius: 10px;
+}
+h1::before {
+    top: -20px;
+}
+h1::after {
+    bottom: -20px;
+}
+
+/* FORM */
+form {
+    width: 90%;
+    max-width: 750px;
+    margin: auto;
+}
+
+/* FIELDSET */
+fieldset {
+    background: #423c01;
+    border: none;
+    border-radius: 10px;
+    padding: 40px 40px 40px;
+    margin-bottom: 45px;
+    position: relative;
+}
+
+/* LEGEND */
+legend {
+ 
+    background: #0c0c0cd8;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+}
+
+/* LABELS */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* INPUTS / SELECT / TEXTAREA */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 2px solid #000000;
+    background: #ffffffde;
+    font-size: 1rem;
+    
+}
+input,
+select,
+textarea {
+    text-align: left;
+}
+textarea {
+    resize: none;
+}
+
+/* PLACEHOLDER */
+::placeholder {
+    color: #e47f0b;
+    text-align: right;
+    font-style: italic;
+}
+
+/* RADIO & CHECKBOX */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px;
+
+}
+fieldset input[type="radio"],
+fieldset input[type="checkbox"] {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* TEXTO NORMAL */
+p {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Texto introductorio */
+fieldset:last-of-type p {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Títulos de sede */
+fieldset:last-of-type strong {
+    display: block;
+    margin: 20px 0 10px;
+    color: #000000;
+    
+}
+
+/* Contenedor de checks */
+fieldset:last-of-type input[type="checkbox"] {
+    margin: 0 6px 0 0;
+}
+
+
+/* Espacio entre sedes */
+fieldset:last-of-type br {
+    display: none;
+}
+
+/* ===== CONDICIONES ===== */
+form > input[type="checkbox"] {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+form > label {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+    vertical-align: middle;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* BOTONES */
+input[type="submit"],
+input[type="reset"] {
+    background: linear-gradient(5deg,#ccc903, #050607);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 25px 10px 0 0;
+}
+input[type="reset"] {
+    background: linear-gradient(-5deg, #ccc903, #050607);
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    opacity: 0.85;
+    display: inline-block;
+}
+
+
+/* Label principal "Sexo:*" */
+fieldset label[for="femenino"] {
+    display: inline;
+}
+
+/* Contenedor visual de los radios */
+fieldset input[type="radio"] {
+    margin: 0 4px 0 12px;
+}
+
+/* Labels de los radios */
+fieldset input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Alinear todo en una línea */
+fieldset {
+    text-align: center;
+}
+
+/* Alinear contenido interno a la izquierda */
+fieldset:last-of-type {
+    text-align: left;
+}
+
+/* Mantener el texto introductorio como está */
+fieldset:last-of-type p {
+    text-align: center;
+}
+
+/* Agrupar cada checkbox con su texto */
+fieldset:last-of-type input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+/* Labels de actividades alineados */
+fieldset:last-of-type label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-bottom: 6px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+/* Separación clara entre sedes */
+fieldset:last-of-type strong {
+    margin-top: 18px;
+}

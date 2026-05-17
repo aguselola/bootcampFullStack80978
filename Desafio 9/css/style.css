@@ -1,0 +1,26 @@
+table{
+    margin: 50px auto;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+td{
+    width: 70px;  
+    height: 70px;
+    text-align: center; 
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    border: 3px solid;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+th{
+    height: 70px;
+    font-size: 40px;
+    text-align: right;
+    padding-right: 5px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
