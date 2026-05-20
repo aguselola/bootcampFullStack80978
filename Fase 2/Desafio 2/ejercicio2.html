@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Formularios y Validaciones</title>
+    <style>
+        h2 { color: blue;}
+        input, label{display: block; }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <h2>
+        Realizar un formulario con los campos nombre, edad y email y un botón para enviar la información a la consola. Cada campo tendrá un cartel propio de validación creado en la estructura HTML y controlado por javascript. Validar utilizando expresiones regulares. 
+        El nombre tendrá como minimo 3 caracteres y máximo 20 con caracteres alfabéticos, la edad estará entre 18 y 120 años y el mail debe ser válido. Todos los campos serán requeridos.
+        Indicar el error de validación con un simple "campo no válido" debajo del campo correspondiente ó si se quiere dar más detalle del error.
+        El botón de envió se habilitará en el caso de que todo sea correcto y ahí se representa en la consola lo ingresado en formato objeto: {nombre: xxxx, edad: 99, email: y&#64z}
+    </h2>
+    <hr>
+    
+    <form>
+        <label for="nombre">Nombre:</label><input id="nombre" type="text" required>
+        <p id="pNombre"></p><br>
+        <label for="edad">Edad:</label><input id="edad" type="number" required>
+        <p id="pEdad"></p><br>
+        <label for="email">Email:</label><input id="email" type="email" required>
+        <p id="pEmail"></p><br>
+
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+
+        const inputNombre = document.getElementById('nombre')
+        const inputEdad = document.getElementById('edad')
+        const inputEmail = document.getElementById('email')
+
+        const pNombre = document.getElementById('pNombre')
+        const pEdad = document.getElementById('pEdad')
+        const pEmail = document.getElementById('pEmail')
+
+        const btn = document.querySelector('button')
+
+        let validadorNombre = false
+        let validadorEdad = false
+        let validadorEmail = false
+
+        btn.disabled = true
+        inputNombre.addEventListener('input', ()=> {
+            let mensaje = ''
+
+            let valorNombre = inputNombre.value
+            valorNombre = valorNombre.trim()
+
+            const validador = /^[a-z]{3,20}$/i 
+
+            if(!validador.test(valorNombre)) {
+                mensaje = 'Debe escribir un nombre válido'
+                pNombre.innerText = mensaje
+                validadorNombre = false
+            }else{
+                pNombre.innerText = ''
+                validadorNombre = true
+            }
+            habilitarBoton()
+        })
+
+        inputEdad.addEventListener('input', ()=> {
+            let mensaje = ''
+
+            let valorEdad = inputEdad.value
+            valorEdad = valorEdad.trim()
+
+            const validador = /^(1[89]|[2-9]\d|1[01]\d|120)$/
+            if (!validador.test(valorEdad)) {
+                mensaje = 'La edad debe estar entre 18 y 120 años'
+                pEdad.innerText = mensaje
+                validadorEdad = false
+            }else{
+                pEdad.innerText = ''
+                validadorEdad = true
+            }
+            habilitarBoton()
+        })
+
+        inputEmail.addEventListener('input', ()=> {
+            let mensaje = ''
+
+            let valorEmail = inputEmail.value
+            valorEmail = valorEmail.trim()
+            
+            const validador = /^[a-zA-Z0-9]+([._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}(\.(ar|uy|br))?$/
+            
+            if(!validador.test(valorEmail)) {
+                mensaje = 'Debe escribir un email válido (Formato abc@abc.abc)'
+                pEmail.innerText = mensaje
+                validadorEmail = false
+            }else{
+                pEmail.innerText = ''
+                validadorEmail = true
+            }
+            habilitarBoton()
+
+        })
+
+
+        function habilitarBoton(){
+
+            if(validadorNombre && validadorEdad && validadorEmail){
+                btn.disabled = false
+            }else{
+                btn.disabled = true
+            }
+        }
+
+        class Programa {
+            constructor() {
+                this.nombre = ''
+                this.edad = ''
+                this.email = ''
+            }
+
+            start() {
+                const form = document.querySelector('form')
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault()
+
+                    this.nombre = inputNombre.value.trim()
+                    this.edad = inputEdad.value.trim()
+                    this.email = inputEmail.value.trim()
+
+                    this.getDatos()
+                    form.reset()
+
+                    validadorNombre = validadorEdad = validadorEmail = false
+                    btn.disabled = true
+                    pNombre.innerText = pEdad.innerText = pEmail.innerText = ''
+                }.bind(this))
+            }
+
+            getDatos() {
+                const persona = {
+                    nombre: this.nombre,
+                    edad: parseInt(this.edad),
+                    email: this.email,
+                }
+                console.log(persona)
+            }
+        }
+
+        const programa =  new Programa()
+        programa.start()
+
+    </script>
+</body>
+
+</html>
