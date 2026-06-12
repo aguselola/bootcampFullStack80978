@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style>
+        h2 {
+            color: blue;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            border: 3px dashed blue;
+            color: yellow;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+            text-shadow: 3px 3px 3px black;
+            margin: 10px;
+            background-color: black;
+            padding: 10px;
+            display: inline-block;
+            vertical-align: top; 
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            display: block;
+        }
+
+        div {
+            background-size: cover;
+        }
+
+    </style>
+</head>
+
+<body>
+    <hr>
+    <h2>
+        Desarrollar un script que permita arrastrar y soltar imágenes que se abrirán en el interior de las zonas definidas. Si realizo dicha acción fuera de esas zonas, se debe cancelar el evento automático correspondiente.
+        Así mismo, cada una de estas zonas permitirá seleccionar las recursos desde el file system. Los archivos de imágen deberán estar en la misma carpeta del proyecto.
+    </h2>
+    <hr>
+
+    <input id="zona1" type="file">
+    <div><label for="zona1">Zona 1: DD or Click</label></div>
+
+    <input id="zona2" type="file">
+    <div><label for="zona2">Zona 2: DD or Click</label></div>
+
+    <input id="zona3" type="file">
+    <div><label for="zona3">Zona 3: DD or Click</label></div>
+
+    <script>
+
+        const zona1 = document.querySelectorAll('div')[0]
+        const zona2 = document.querySelectorAll('div')[1]
+        const zona3 = document.querySelectorAll('div')[2]
+
+        const input1 = document.getElementById('zona1')
+        const input2 = document.getElementById('zona2')
+        const input3 = document.getElementById('zona3')
+        
+
+        function cargarImagen(zona, archivo) {
+            if (!archivo || !archivo.type.startsWith('img/')) return
+            const urlImagen = './img/' + archivo.name
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', urlImagen)
+            xhr.responseType = 'blob'
+            xhr.addEventListener('load', () => {
+                if (xhr.status == 200) {
+                    const url = URL.createObjectURL(xhr.response)
+                    zona.style.backgroundImage = `url('${url}')`
+                    zona.style.backgroundSize = 'cover'
+                    zona.style.backgroundPosition = 'center'
+                    zona.querySelector('label').style.display = 'none'
+                } else {
+                    console.log('error en cargar el archivo')
+                }
+            })
+            xhr.send()
+        }
+
+        
+        function configurarZona(zona, input) {
+
+            zona.addEventListener('click', (e) => {
+                if (e.target.tagName === 'LABEL') return
+                input.click()
+            })
+            input.addEventListener('change', function () {
+                cargarImagen(zona, this.files[0])
+                this.value = ''
+            })
+            zona.addEventListener('dragenter', e => e.preventDefault())
+            zona.addEventListener('dragover', e => e.preventDefault())
+            zona.addEventListener('drop', e => {
+                e.preventDefault()
+                cargarImagen(zona, e.dataTransfer.files[0])
+            })
+        }
+
+       
+        configurarZona(zona1, input1)
+        configurarZona(zona2, input2)
+        configurarZona(zona3, input3)
+
+        document.addEventListener('dragenter', e => e.preventDefault())
+        document.addEventListener('dragover', e => e.preventDefault())
+        document.addEventListener('dragleave', e => e.preventDefault())
+        document.addEventListener('drop', e => e.preventDefault())
+
+    </script>
+
+</body>
+
+</html>
