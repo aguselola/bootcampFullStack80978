@@ -70,7 +70,7 @@
         
 
         function cargarImagen(zona, archivo) {
-            if (!archivo || !archivo.type.startsWith('img/')) return
+            if (!archivo || !archivo.type.startsWith('image/')) return
             const urlImagen = './img/' + archivo.name
             const xhr = new XMLHttpRequest()
             xhr.open('GET', urlImagen)
