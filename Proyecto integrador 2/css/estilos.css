@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');* {
+    box-sizing: content-box;
+    /* box-sizing: border-box; */
+}
+main {
+    height: auto;
+    background-image: url(./img/ChatGPT\ Image\ 28\ abr\ 2026\,\ 05_57_02\ p.m..png);
+    text-align: center;
+    padding: 25px;
+}
+body, ul, h1, h3, p {
+    margin: 0;
+}
+
+body {
+    font-family: "Playfair Display", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: auto;
+}
+
+header nav {
+    background-color: #FAF2F1;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+header nav ul {
+    width: 80%;
+    height: auto;
+
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    justify-content: start;
+
+    flex-direction: row;
+}
+
+header nav ul li {
+    width: 100%;
+    height: auto;
+}
+
+header nav ul li a {
+    text-decoration: none;
+
+    width: 115px;
+    height: 40px;
+    display: block;
+
+    background-color: #743309;
+    color: #FAF2F1;
+    
+    text-align: center;
+    line-height: 40px;
+    
+    margin: auto;
+    border-radius: 10px;
+
+}
+
+header nav ul li a:hover {
+    background: radial-gradient(#FAF2F1, #743309);
+    color: #a36945;
+
+}
+
+/* ------------------------------------------- */
+header > div {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+#logo {
+    height: 54px;
+    width: 14%;
+    background-color: #FAF2F1;
+    text-align: center;
+    line-height: 54px;
+    font-size: 22px;
+}
+#logo img{
+    height: 54px;
+    line-height: 54px;
+}
+
+#barra-busqueda {
+    height: 54px;
+    width: 85%;
+    background-color: #FAF2F1;
+    text-align: center;
+    line-height: 54px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#barra-busqueda img{
+    height: 40px;
+    background-color: #FAF2F1;
+}
+
+#boton-carrito {
+    height: 54px;
+    width: 5%;
+    background-color: #FAF2F1;
+    text-align: center;
+    line-height: 54px;
+    font-size: 20px;
+}
+#boton-carrito img{
+    height: 46px;
+}
+
+#barra-busqueda form {
+    width: 85%;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#barra-busqueda form label {
+    background-color: #C297B8;
+    height: 40px;
+    line-height: 22px;
+    text-align: center;
+    margin-right: 2px;
+}
+
+#barra-busqueda form input {
+    width: 40%;
+    height: 20px;
+    color: white;
+    margin: 1px;
+    border: 1px solid #743309;
+}
+
+#barra-busqueda form input[type="submit"] {
+    background-color: #D1B77D;
+    width: 100px;
+    height: 30px;
+    font-family: "Playfair Display", sans-serif;
+    border-radius: 10px;
+}
+
+#barra-busqueda form input[type="submit"]:hover {
+    background: radial-gradient(#FAF2F1, #D1B77D);
+    color: #a36945;
+}
+#barra-busqueda form input[type="text"]:focus {
+    background-color: #D1B77D;
+    width: 50%;
+    height: 20px;
+    color: white;
+    margin: 1px;
+}
+
+
+h1 {
+    margin-bottom: 40px;
+    font-family: "Lobster", sans-serif;
+    color: #D1B77D;
+}
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    animation: brillo 3s ease-in-out infinite;
+    letter-spacing: 2px;
+}
+
+@keyframes brillo {
+
+    0%{
+        text-shadow:
+        
+        0 0 5px rgba(209,183,125,.2);
+    }
+
+    50%{
+        text-shadow:
+        0 0 10px rgba(209,183,125,.6),
+        0 0 20px rgba(184,146,94,.5),
+        0 0 30px rgba(116,51,9,.3);
+    }
+
+    100%{
+        text-shadow:
+        0 0 5px rgba(209,183,125,.2);
+    }
+
+}
+
+footer {
+    background-color: #743309;
+    color: white;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 10px;
+}
+
+@media(max-width:780px){
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header nav {
+        order: 2; 
+    }
+
+    #headerLogoBarra {
+        order: 1; 
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li a{
+        width: 70%;
+        margin: 5px auto;
+    }
+
+    #headerLogoBarra{
+        position: relative;
+    }
+
+    #logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10; 
+    }
+
+    #boton-carrito{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10; 
+    }
+    
+    #barra-busqueda{
+        width: 100%;
+    }
+
+}

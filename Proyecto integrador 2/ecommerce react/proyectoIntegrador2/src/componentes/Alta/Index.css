@@ -1,0 +1,166 @@
+main {
+    background-color: #ddd;
+    padding: 20px;
+    height: auto;
+}
+
+main h1 {
+    text-align: center;
+}
+
+.alta-form {
+    background-color: #D1B77D;
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    color: white;
+    border-radius: 20px;
+    border: 1px dashed #743309;
+    
+}
+
+.input-group {
+    text-align: center;
+    padding: 3px;
+}
+
+main label {
+    color: #743309;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 5px;
+}
+
+main label[for="envio"] {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+form button {
+    display: block;
+    margin: 15px auto;
+
+    width: 30%;
+    height: 10px;
+    line-height: 10px;
+
+    background-color: #743309;
+    color: #D1B77D;
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: "Playfair Display", sans-serif;
+}
+
+main input {
+    width: 60%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #FAF2F1;
+}
+main input:focus{
+    width: 62%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #743309;
+    color: #FAF2F1;
+}
+
+main input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* ----- Maquetado de la tabla ----- */
+th, td {
+    border: 1px solid black;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 5px auto;
+    background-color: #D1B77D;
+}
+
+th {
+    text-transform: uppercase;
+    background-color: #743309;
+    color: white;
+    font-size: 20px;
+}
+
+td {
+    font-size: 18px;
+}
+
+.centrar {
+    text-align: center;
+}
+
+main h2 {
+    /* border: 1px solid blue; */
+    text-align: center;
+    color: #743309;
+    font-family: "Lobster", sans-serif;
+    text-shadow: 2px 2px 3px #D1B77D;
+
+}
+
+.responsive {
+    width: 100%;
+    overflow: auto;
+}
+
+.foto-producto{
+    width: 75px;
+    height: 75px;
+}
+
+table button {
+    display: block;
+    margin: 15px auto;
+
+    height: 10px;
+    line-height: 10px;
+
+    background-color: #743309;
+    color: #D1B77D;
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: "Playfair Display", sans-serif;
+}
+
+.alta table .borrar-editar:hover {
+    cursor: pointer;
+}
+
+.alta table button.btnBorrar:disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.error-detail {
+    color: #8b0000;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+@media (max-width: 1100px) {
+    .responsive table th, .responsive table td{
+        font-size: 12px;
+    }
+    table button{
+        font-size: 12px;
+        width: 30px;
+
+    }
+}
+@media (max-width:800px){
+    td{
+        padding: 0px;
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECommerce (carrito)</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="./index.html">Inicio</a> </li>
+                <li> <a href="./alta.html">Alta</a> </li>
+                <li> <a href="./carrito.html">Carrito</a> </li>
+                <li> <a href="./contacto.html">Contacto</a> </li>
+                <li> <a href="./nosotros.html">Nosotros</a> </li>
+                <li> <a href="./otra.html">Otra</a> </li>
+            </ul>
+        </nav>
+        <div>
+            <div id="logo"><img src="./css/img/logo arcana.PNG" alt="logo"></div>
+            <div id="barra-busqueda">
+                <form action="#">
+                    <label for="buscar"><img src="./css/img/lupita.png" alt="lupa para buscar"></label>
+                    <input type="text">
+                    <input type="submit" value="Buscar">
+                </form>
+            </div>
+            <div id="boton-carrito"><a href="./carrito.html"><img src="./css/img/carritochagpt.png" alt="boton carrito"></a></div>        
+        </div>
+    </header>
+
+    <main>
+        <h1>Carrito de Compras</h1>
+
+
+        <section class="carrito">
+
+        <h4>🛒 Tu Ritual Seleccionado</h4>
+
+        <div class="productoCarrito">
+
+            <img src="./css/img/box-amor.png" alt="Box Amor">
+
+            <div class="infoProducto">
+
+                <h3>Box Amor</h3>
+
+                <p>✨ Energía • Prosperidad • Intención</p>
+
+                <span>$600</span>
+
+            </div>
+
+            <button>Eliminar</button>
+
+        </div>
+
+        <div class="productoCarrito">
+
+            <img src="./css/img/cups-con-recina.png" alt="Cups">
+
+            <div class="infoProducto">
+
+                <h3>Cups con recina x4</h3>
+
+                <p>🔮 Intuición • Autoconocimiento</p>
+
+                <span>$200</span>
+
+            </div>
+
+            <button>Eliminar</button>
+
+        </div>
+
+        <div class="total">
+
+            <h3>Total: $800</h3>
+
+            <button class="finalizar">
+                ✦ Finalizar compra
+            </button>
+
+        </div>
+
+    </section>
+    </main>
+
+    <footer>
+        <h3>✦Confía en tu intuición, el universo conspira a tu favor✦</h3>
+        
+    </footer>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
