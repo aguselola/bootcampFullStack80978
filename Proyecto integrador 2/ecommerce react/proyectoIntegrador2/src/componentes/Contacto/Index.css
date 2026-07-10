@@ -88,13 +88,33 @@ main {
     }
 }
 
-input:invalid,
-textarea:invalid,
-select:invalid {
-  border-color: #c00;
-  outline-color: #c00;
+.input-group {
+    width: 70%;
+    margin: auto;
 }
 
-input:focus:invalid {
-  box-shadow: 0 0 0 2px rgba(200, 0, 0, 0.25);
+.form-ayuda {
+    display: block;
+    font-size: 13px;
+    color: #743309;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+.error-detail {
+    color: #8b0000;
+    font-size: 14px;
+    min-height: 18px;
+    text-align: left;
+}
+
+.mensaje-exito {
+    width: 70%;
+    margin: 15px auto 0;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #743309;
+    color: #FAF2F1;
+    font-weight: bold;
 }

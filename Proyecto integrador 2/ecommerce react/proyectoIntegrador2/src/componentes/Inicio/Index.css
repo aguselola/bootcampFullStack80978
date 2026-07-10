@@ -159,3 +159,69 @@ button{
     box-shadow:
     0 4px 12px rgba(116,51,9,.25);
 }
+
+.toast-carrito {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: min(360px, calc(100vw - 32px));
+    padding: 14px 18px;
+    background-color: #743309;
+    color: #FAF2F1;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(116, 51, 9, 0.35);
+    animation: toastEntrada 0.35s ease;
+}
+
+.toast-carrito p {
+    margin: 0;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.toast-cerrar {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #FAF2F1;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: none;
+    transform: none;
+}
+
+.toast-cerrar:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: none;
+    box-shadow: none;
+}
+
+@keyframes toastEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 780px) {
+    .toast-carrito {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: none;
+    }
+}

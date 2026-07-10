@@ -140,6 +140,29 @@
     box-shadow: none;
 }
 
+.btnVaciar {
+    display: block;
+    margin: 0 auto 10px;
+    background: linear-gradient(135deg, #743309, #8B4513);
+    color: #F8F2EA;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-family: "Playfair Display", serif;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btnVaciar:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(209, 183, 125, 0.5);
+}
+
+.btnVaciar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .cantidad{
     display: inline-block;
     font-size: 25px;

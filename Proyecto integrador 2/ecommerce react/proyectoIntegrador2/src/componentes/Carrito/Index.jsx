@@ -8,10 +8,25 @@ export function Index() {
 
     const [carrito, setCarrito] = useStateLocalStorage('carrito', [])
     const [productoAEliminar, setProductoAEliminar] = useState(null)
+    const [modalVaciar, setModalVaciar] = useState(false)
     const [modalPedido, setModalPedido] = useState(null)
     const [enviando, setEnviando] = useState(false)
 
     const total = carrito.reduce((sum, producto) => sum + producto.precio * producto.cantidad, 0)
+
+    function abrirModalVaciar() {
+        if (!carrito.length) return
+        setModalVaciar(true)
+    }
+
+    function confirmarVaciar() {
+        setCarrito([])
+        setModalVaciar(false)
+    }
+
+    function cancelarVaciar() {
+        setModalVaciar(false)
+    }
 
     function decrementarItem(id) {
         const carritoClon = [...carrito]
@@ -82,7 +97,19 @@ export function Index() {
 
             <h4>🛒 Tu Ritual Seleccionado</h4>
 
+
+            <button
+                className="btnVaciar"
+                onClick={abrirModalVaciar}
+                disabled={!carrito.length}
+            >
+                Vaciar carrito
+            </button>
+            <br/>
+            <br/>
+
             {
+
                 carrito.map((producto, i) =>
 
                     <div className="productoCarrito" key={producto.id ?? i}>
@@ -96,7 +123,7 @@ export function Index() {
                             <p>{producto.detalles}</p>
                             <p>{producto.envio?'Envío disponible':'Envío no disponible'}</p>
 
-                            <p className='p-precio'>${producto.precio * producto.cantidad}</p>
+                            <p className='p-precio'>${producto.precio}</p>
 
                             <button className="btnIncDec" onClick={
                                 () => decrementarItem(producto.id)
@@ -107,6 +134,9 @@ export function Index() {
                             <button className="btnIncDec" onClick={
                                 () => incrementarItem(producto.id)
                             }>+</button>
+
+                            <p className='p-precio'>Subtotal: ${producto.precio * producto.cantidad}</p>
+
 
 
                         </div>
@@ -138,6 +168,25 @@ export function Index() {
 
 
         </section>
+
+        {modalVaciar && (
+            <div className="modal-overlay" onClick={cancelarVaciar}>
+                <div className="modal-confirmar" onClick={e => e.stopPropagation()}>
+                    <h3>¿Vaciar el carrito?</h3>
+                    <p>
+                        Vas a quitar <strong>{carrito.length}</strong> producto{carrito.length > 1 ? 's' : ''} de tu ritual seleccionado. Esta acción no se puede deshacer.
+                    </p>
+                    <div className="modal-botones">
+                        <button className="btnCancelarModal" onClick={cancelarVaciar}>
+                            Cancelar
+                        </button>
+                        <button className="btnConfirmarModal" onClick={confirmarVaciar}>
+                            Sí, vaciar carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )}
 
         {productoAEliminar && (
             <div className="modal-overlay" onClick={cancelarEliminacion}>

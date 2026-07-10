@@ -1,0 +1,242 @@
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #743309;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 24px;
+}
+
+h2 {
+    color: #743309;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 24px;
+    font-size: 1.6rem;
+}
+
+.otra-intro {
+    background: rgba(209, 183, 125, 0.88);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 30px 40px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: justify;
+}
+
+.otra-intro p {
+    margin: 0;
+    line-height: 1.7;
+    color: #5A2506;
+}
+
+.otra-separador {
+    width: 180px;
+    margin: 24px auto 0px;
+}
+
+.otra-rituales {
+    margin-bottom: 50px;
+}
+
+.otra-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 0 10px;
+}
+
+.otra-card {
+    width: 280px;
+    background-color: #D1B773;
+    color: white;
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(116, 51, 9, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.otra-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 0 15px rgba(209, 183, 125, 0.5),
+        0 15px 35px rgba(116, 51, 9, 0.15);
+}
+
+.otra-card-icono {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.otra-card h3 {
+    color: #743309;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    margin-bottom: 14px;
+    font-size: 1.25rem;
+}
+
+.otra-card p {
+    margin-bottom: 12px;
+    line-height: 1.55;
+    font-size: 0.95rem;
+}
+
+.otra-productos {
+    font-size: 0.85rem;
+    opacity: 0.95;
+    border-top: 1px dashed rgba(116, 51, 9, 0.35);
+    padding-top: 12px;
+    margin-bottom: 0;
+}
+
+.otra-productos b {
+    color: #743309;
+}
+
+.otra-intencion {
+    background: rgba(209, 183, 125, 0.88);
+    backdrop-filter: blur(6px);
+    border-radius: 25px;
+    padding: 40px 30px;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.otra-intencion-texto {
+    color: #5A2506;
+    margin-bottom: 24px;
+}
+
+.otra-botones-intencion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.otra-btn-intencion {
+    background: linear-gradient(135deg, #743309, #8B4513);
+    color: #FAF2F1;
+    border: 2px solid transparent;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: "Playfair Display", serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.otra-btn-intencion:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(116, 51, 9, 0.35);
+}
+
+.otra-btn-intencion.activa {
+    border-color: #FAF2F1;
+    box-shadow: 0 0 20px rgba(209, 183, 125, 0.6);
+    transform: scale(1.05);
+}
+
+.otra-resultado {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 24px;
+    animation: otraAparecer 0.4s ease;
+}
+
+.otra-resultado h3 {
+    color: #743309;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.otra-resultado p {
+    color: #5A2506;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.otra-cierre {
+    position: relative;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    padding: 40px 20px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.otra-cierre p {
+    color: #743309;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.otra-decoracion {
+    width: 80px;
+    position: absolute;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.otra-decoracion.izq {
+    left: 20px;
+    bottom: 20px;
+    rotate: 140deg;
+    transform: scaleX(-1);
+}
+
+.otra-decoracion.der {
+    right: 20px;
+    bottom: 20px;
+    rotate: 220deg;
+}
+
+@keyframes otraAparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 780px) {
+    .otra-intro {
+        padding: 24px 20px;
+        width: 95%;
+    }
+
+    .otra-card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .otra-intencion {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    .otra-botones-intencion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .otra-btn-intencion {
+        width: 90%;
+    }
+
+    .otra-decoracion {
+        display: none;
+    }
+}

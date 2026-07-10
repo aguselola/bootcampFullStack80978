@@ -9,7 +9,7 @@ export function Index() {
 
     const [productos, setProductos] = useState([])  
     const [carrito, setCarrito] = useStateLocalStorage('carrito', [])
-    const [productoAgregado, setProductoAgregado] = useState(null)
+    const [toast, setToast] = useState(null)
 
     // Hook de Efecto de montado / desmontado
     useEffect(() => {
@@ -25,6 +25,13 @@ export function Index() {
         }
     }, [])
 
+    useEffect(() => {
+        if (!toast) return
+
+        const timer = setTimeout(() => setToast(null), 3500)
+        return () => clearTimeout(timer)
+    }, [toast])
+
     function agregarAlCarrito(producto) {
         setCarrito(prev => {
             const existe = prev.find(p => p.id == producto.id)
@@ -37,11 +44,11 @@ export function Index() {
             }
             return [...prev, { ...producto, cantidad: 1 }]
         })
-        setProductoAgregado(producto)
+        setToast(producto)
     }
 
-    function cerrarModal() {
-        setProductoAgregado(null)
+    function cerrarToast() {
+        setToast(null)
     }
 
   return (
@@ -75,19 +82,19 @@ export function Index() {
                 }
             </div>
         </div>
-        {productoAgregado && (
-            <div className="modal-overlay" onClick={cerrarModal}>
-                <div className="modal-confirmar" onClick={e => e.stopPropagation()}>
-                    <h3>✦ Producto agregado ✦</h3>
-                    <p>
-                        <strong>{productoAgregado.nombre}</strong> se añadió correctamente a tu carrito.
-                    </p>
-                    <div className="modal-botones">
-                        <button className="btnConfirmarModal" onClick={cerrarModal}>
-                            Seguir comprando
-                        </button>
-                    </div>
-                </div>
+        {toast && (
+            <div className="toast-carrito" role="status" aria-live="polite">
+                <p>
+                    ✦ <strong>{toast.nombre}</strong> se agregó al carrito
+                </p>
+                <button
+                    type="button"
+                    className="toast-cerrar"
+                    onClick={cerrarToast}
+                    aria-label="Cerrar aviso"
+                >
+                    ×
+                </button>
             </div>
         )}
     </>
