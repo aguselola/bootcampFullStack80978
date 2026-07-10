@@ -1,13 +1,17 @@
-import { useState } from 'react'
 import {useStateLocalStorage} from '../../hooks/useStateLocalStorage'
-import servicioProductos from '../../servicios/productos'
+import {  useState } from 'react'
+import servicioPedidos from '../../servicios/pedidos'
 import './Index.css'
 
 
 export function Index() {
 
     const [carrito, setCarrito] = useStateLocalStorage('carrito', [])
-    const [total, setTotal] = useState(0)
+    const [productoAEliminar, setProductoAEliminar] = useState(null)
+    const [modalPedido, setModalPedido] = useState(null)
+    const [enviando, setEnviando] = useState(false)
+
+    const total = carrito.reduce((sum, producto) => sum + producto.precio * producto.cantidad, 0)
 
     function decrementarItem(id) {
         const carritoClon = [...carrito]
@@ -31,6 +35,43 @@ export function Index() {
         setCarrito(prev => prev.filter(p => p.id !== id))
     }
 
+    function confirmarEliminacion() {
+        setCarrito(prev => prev.filter(p => p.id !== productoAEliminar.id))
+        setProductoAEliminar(null)
+    }
+    function cancelarEliminacion() {
+        setProductoAEliminar(null)
+    }
+
+    function abrirModalPedido() {
+        if (!carrito.length) return
+        setModalPedido('confirmar')
+    }
+
+    async function confirmarPedido() {
+        setEnviando(true)
+
+        try {
+            const pedido = {
+                fecha: new Date().toLocaleString(),
+                pedido: carrito
+                
+            }
+
+            await servicioPedidos.enviar(pedido)
+            setCarrito([])
+            setModalPedido('exito')
+        } catch (error) {
+            console.error('Error al enviar pedido', error)
+            setModalPedido('error')
+        } finally {
+            setEnviando(false)
+        }
+    }
+
+    function cerrarModalPedido() {
+        setModalPedido(null)
+    }
   return (
     <>
         
@@ -44,7 +85,7 @@ export function Index() {
             {
                 carrito.map((producto, i) =>
 
-                    <div className="productoCarrito">
+                    <div className="productoCarrito" key={producto.id ?? i}>
 
                         <img src={producto.foto} alt={producto.nombre} />
 
@@ -71,7 +112,7 @@ export function Index() {
                         </div>
 
                         <button className="btnBorrar" onClick={
-                            () => borrarItem(producto.id)
+                            () => setProductoAEliminar(producto)
                         }>Eliminar</button>
 
                     </div>
@@ -82,9 +123,13 @@ export function Index() {
 
             <div className="total">
 
-                <h3>Total:</h3>
+                <h3>Total: ${total}</h3>
 
-                <button className="finalizar">
+                <button
+                    className="finalizar"
+                    onClick={abrirModalPedido}
+                    disabled={!carrito.length}
+                >
                     ✦ Finalizar compra
                 </button>
 
@@ -93,6 +138,75 @@ export function Index() {
 
 
         </section>
+
+        {productoAEliminar && (
+            <div className="modal-overlay" onClick={cancelarEliminacion}>
+                <div className="modal-confirmar" onClick={e => e.stopPropagation()}>
+                    <h3>¿Eliminar del carrito?</h3>
+                    <p>
+                        Vas a quitar <strong>{productoAEliminar.nombre}</strong> de tu ritual seleccionado.
+                    </p>
+                    <div className="modal-botones">
+                        <button className="btnCancelarModal" onClick={cancelarEliminacion}>
+                            Cancelar
+                        </button>
+                        <button className="btnConfirmarModal" onClick={confirmarEliminacion}>
+                            Sí, eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )}
+
+        {modalPedido === 'confirmar' && (
+            <div className="modal-overlay" onClick={cerrarModalPedido}>
+                <div className="modal-confirmar" onClick={e => e.stopPropagation()}>
+                    <h3>¿Confirmar pedido?</h3>
+                    <p>
+                        Vas a enviar <strong>{carrito.length}</strong> producto{carrito.length > 1 ? 's' : ''} por un total de <strong>${total}</strong>.
+                    </p>
+                    <div className="modal-botones">
+                        <button className="btnCancelarModal" onClick={cerrarModalPedido} disabled={enviando}>
+                            Cancelar
+                        </button>
+                        <button className="btnConfirmarModal" onClick={confirmarPedido} disabled={enviando}>
+                            {enviando ? 'Enviando...' : 'Sí, finalizar compra'}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )}
+
+        {modalPedido === 'exito' && (
+            <div className="modal-overlay" onClick={cerrarModalPedido}>
+                <div className="modal-confirmar" onClick={e => e.stopPropagation()}>
+                    <h3>✦ Pedido enviado ✦</h3>
+                    <p>Tu ritual fue registrado correctamente. ¡Gracias por tu compra!</p>
+                    <div className="modal-botones">
+                        <button className="btnConfirmarModal" onClick={cerrarModalPedido}>
+                            Aceptar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )}
+
+        {modalPedido === 'error' && (
+            <div className="modal-overlay" onClick={cerrarModalPedido}>
+                <div className="modal-confirmar" onClick={e => e.stopPropagation()}>
+                    <h3>No se pudo enviar el pedido</h3>
+                    <p>Hubo un problema al conectar con el servidor. Intentá de nuevo en unos momentos.</p>
+                    <div className="modal-botones">
+                        <button className="btnCancelarModal" onClick={cerrarModalPedido}>
+                            Cerrar
+                        </button>
+                        <button className="btnConfirmarModal" onClick={confirmarPedido} disabled={enviando}>
+                            {enviando ? 'Enviando...' : 'Reintentar'}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )}
     </>
 
   )

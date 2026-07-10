@@ -290,6 +290,8 @@ export function Index() {
                     </tbody>
             </table>
         </div>
+
+        
     </>
   )
 }

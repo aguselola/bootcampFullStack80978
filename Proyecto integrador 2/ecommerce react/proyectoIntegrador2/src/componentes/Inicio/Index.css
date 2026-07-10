@@ -17,7 +17,7 @@ main .section-cards-body {
     justify-content: space-evenly;
 }
 
-section {
+.cards {
     width: 400px;
     height: auto;
     padding: 15px;

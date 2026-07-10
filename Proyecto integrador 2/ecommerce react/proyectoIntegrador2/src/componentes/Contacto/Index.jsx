@@ -20,24 +20,24 @@ export function Index() {
                 
                 <form id="formularioContacto">
                     <div>
-                        <label for="nombre">Nombre</label>
-                        <input id="nombre" type="text" name="nombre" minlength="2" maxlength="50" placeholder="Tu nombre" required />
+                        <label htmlFor="nombre">Nombre</label>
+                        <input id="nombre" type="text" name="nombre" minLength="2" maxLength="50" placeholder="Tu nombre" required />
                     </div>
                     <div>
-                        <label for="apellido">Apellido</label>
-                        <input id="apellido" type="text" name="apellido" minlength="2" maxlength="50" placeholder="Tu apellido" required />
+                        <label htmlFor="apellido">Apellido</label>
+                        <input id="apellido" type="text" name="apellido" minLength="2" maxLength="50" placeholder="Tu apellido" required />
                     </div>
                     <div>
-                        <label for="telefono">Teléfono</label>
-                        <input id="telefono" type="tel" name="telefono" title="Ingresa un telefono válido" pattern="[0-9]+" maxlength="9" placeholder="Ej: 098 123 456" required />
+                        <label htmlFor="telefono">Teléfono</label>
+                        <input id="telefono" type="tel" name="telefono" title="Ingresa un telefono válido" pattern="[0-9]+" maxLength="9" placeholder="Ej: 098 123 456" required />
                     </div>
                     <div>
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input id="email" type="email" name="email" placeholder="tu@email.com" required />
                     </div>
                     <div>
-                        <label for="consulta">Consulta</label>
-                        <textarea id="consulta" name="consulta" minlength="10" maxlength="2000" placeholder="Escribe tu consulta..." required></textarea>                
+                        <label htmlFor="consulta">Consulta</label>
+                        <textarea id="consulta" name="consulta" minLength="10" maxLength="2000" placeholder="Escribe tu consulta..." required></textarea>                
                     </div>
                     <button type="submit" >✦ Enviar mensaje ✦</button>
                     

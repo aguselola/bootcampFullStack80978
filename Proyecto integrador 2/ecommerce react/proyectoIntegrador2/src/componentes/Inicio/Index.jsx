@@ -9,6 +9,7 @@ export function Index() {
 
     const [productos, setProductos] = useState([])  
     const [carrito, setCarrito] = useStateLocalStorage('carrito', [])
+    const [productoAgregado, setProductoAgregado] = useState(null)
 
     // Hook de Efecto de montado / desmontado
     useEffect(() => {
@@ -36,6 +37,11 @@ export function Index() {
             }
             return [...prev, { ...producto, cantidad: 1 }]
         })
+        setProductoAgregado(producto)
+    }
+
+    function cerrarModal() {
+        setProductoAgregado(null)
     }
 
   return (
@@ -69,6 +75,21 @@ export function Index() {
                 }
             </div>
         </div>
+        {productoAgregado && (
+            <div className="modal-overlay" onClick={cerrarModal}>
+                <div className="modal-confirmar" onClick={e => e.stopPropagation()}>
+                    <h3>✦ Producto agregado ✦</h3>
+                    <p>
+                        <strong>{productoAgregado.nombre}</strong> se añadió correctamente a tu carrito.
+                    </p>
+                    <div className="modal-botones">
+                        <button className="btnConfirmarModal" onClick={cerrarModal}>
+                            Seguir comprando
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )}
     </>
   )
 }

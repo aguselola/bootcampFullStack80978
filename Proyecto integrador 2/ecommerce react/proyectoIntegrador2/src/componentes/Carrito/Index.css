@@ -133,6 +133,13 @@
     0 0 20px rgba(116,51,9,.35);
 }
 
+.finalizar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .cantidad{
     display: inline-block;
     font-size: 25px;
