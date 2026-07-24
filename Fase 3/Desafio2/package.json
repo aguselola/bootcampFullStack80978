@@ -1,0 +1,15 @@
+{
+  "name": "desafio2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mapaa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node mapaa.js",
+    "dev": "nodemon mapaa.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

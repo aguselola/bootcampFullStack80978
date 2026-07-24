@@ -1,0 +1,19 @@
+{
+	"contenidoStr": "{\n  \"name\": \"desafio2\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"mapaa.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\n    \"start\": \"node mapaa.js\",\n    \"dev\": \"nodemon mapaa.js\"\n  },\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"type\": \"commonjs\"\n}\n",
+	"contenidoObj": {
+		"name": "desafio2",
+		"version": "1.0.0",
+		"description": "",
+		"main": "mapaa.js",
+		"scripts": {
+			"test": "echo \"Error: no test specified\" && exit 1",
+			"start": "node mapaa.js",
+			"dev": "nodemon mapaa.js"
+		},
+		"keywords": [],
+		"author": "",
+		"license": "ISC",
+		"type": "commonjs"
+	},
+	"size": 305
+}
