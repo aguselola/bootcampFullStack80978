@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const uri = 'mongodb://127.0.0.1:27017';
+const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017';
 const nombreDB = 'desafio4';        // o la que elijas
 const nombreColeccion = 'palabras';
 const idDocumento = 'palabras';     // _id fijo del documento
