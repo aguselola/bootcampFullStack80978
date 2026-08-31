@@ -53,6 +53,22 @@ export function Index() {
         recibirDatosPago()
     }, [])
 
+    async function confirmarPedido() {
+        if (!carrito.length) return
+        setEnviando(true)
+        try {
+            await servicioPedidos.enviar(carrito)
+            setCarrito([])
+            setPagar(false)
+            setModalPedido('exito')
+        } catch (error) {
+            console.error('Error al enviar pedido:', error)
+            setModalPedido('error')
+        } finally {
+            setEnviando(false)
+        }
+    }
+
     async function generarPedido(compra) {
         const pedido = {
             fecha: new Date().toLocaleString(),
@@ -225,11 +241,19 @@ export function Index() {
 
                 <h3>Total: ${total}</h3>
 
+                <button
+                    className="finalizar"
+                    onClick={confirmarPedido}
+                    disabled={!carrito.length || enviando}
+                >
+                    {enviando ? 'Enviando...' : '✦ Confirmar pedido'}
+                </button>
+
                 {!pagar ? (
                     <button
                         className="finalizar"
                         onClick={() => setPagar(true)}
-                        disabled={!carrito.length}
+                        disabled={!carrito.length || enviando}
                     >
                         ✦ Pagar con Mercado Pago
                     </button>
@@ -283,18 +307,6 @@ export function Index() {
                         <button className="btnConfirmarModal" onClick={confirmarEliminacion}>
                             Sí, eliminar
                         </button>
-                    </div>
-                </div>
-            </div>
-        )}
-
-        {modalPedido === 'exito' && (
-            <div className="modal-overlay" onClick={cerrarModalPedido}>
-                <div className="modal-confirmar" onClick={e => e.stopPropagation()}>
-                    <h3>✦ Pedido enviado ✦</h3>
-                    <p>Tu ritual fue registrado correctamente. ¡Gracias por tu compra!</p>
-                    <div className="modal-botones">
-                        <button className="btnConfirmarModal" onClick={cerrarModalPedido}>Aceptar</button>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 import axios from "axios"
 
-const url = `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/productos`
+const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const appUrl = import.meta.env.VITE_APP_URL || 'http://localhost:5173'
+const url = `${apiUrl}/api/carrito`
 
 const enviar = async pedido => await axios.post(url, pedido, {
     headers: { 'content-type': 'application/json' }
@@ -16,9 +18,9 @@ const getPreferenceId = async carrito => {
         currency_id: 'UYU',
       })),
       back_urls: {
-        success: 'http://localhost:5173/carrito',
-        failure: 'http://localhost:5173/carrito',
-        pending: 'http://localhost:5173/carrito',
+        success: `${appUrl}/carrito`,
+        failure: `${appUrl}/carrito`,
+        pending: `${appUrl}/carrito`,
       },
     },
   };

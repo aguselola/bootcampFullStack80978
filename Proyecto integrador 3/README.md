@@ -1,4 +1,13 @@
+# Arcana Cósmica — Proyecto Integrador Etapa 3
+
+E-commerce de productos místicos con:
+
+- Catálogo de productos (CRUD)
+- Carrito de compras con persistencia en localStorage
+- Pedidos guardados en MongoDB
+- Contador de carrito con Redux
 - Pagar con Mercado Pago (opcional, modo prueba)
+
 El proyecto tiene **frontend** (React) y **backend** (Node.js + Express) separados, conectados por una API REST.
 ---
 ## Tecnologías utilizadas
@@ -36,34 +45,7 @@ Proyecto integrador 3/
 │       └── hooks/        → Hook de localStorage
 │
 └── README.md             → Este archivo
-```
----
-## Instalación
-Clonar el repositorio y luego instalar dependencias en cada carpeta.
-### Backend
-```bash
-cd Backend
-npm install
-```
-### Frontend
-```bash
-cd Frontend
-npm install
-```
----
-## Variables de entorno
-Crear un archivo `.env` en cada carpeta (no se sube a GitHub).
-### Backend (`Backend/.env`)
-```
-PORT=3000
-MODO_PERSISTENCIA=MONGODB
-STRCNX=mongodb+srv://usuario:password@cluster.mongodb.net/...
-BASE=ecommerce
-MP_ACCESS_TOKEN=tu_access_token_de_mercadopago
-```
-### Frontend (`Frontend/.env`)
-```
-VITE_APP_MP_PUBLIC_KEY=tu_public_key_de_mercadopago
+
 ```
 > Las credenciales de Mercado Pago se obtienen en [mercadopago.com.uy/developers](https://www.mercadopago.com.uy/developers), pestaña **Credenciales de prueba**.
 ---
@@ -87,21 +69,6 @@ npm run dev
 Abrí el navegador en la URL que muestra Vite (normalmente `http://localhost:5173`).
 > **Importante:** usar siempre el puerto del **frontend** (5173) en el navegador. El puerto 3000 es solo la API.
 ---
-## API — Endpoints del backend
-### Productos
-| Método   | Ruta                    | Descripción              |
-|----------|-------------------------|--------------------------|
-| `GET`    | `/api/productos`        | Listar todos los productos |
-| `GET`    | `/api/productos/:id`    | Obtener un producto por ID |
-| `POST`   | `/api/productos`        | Crear un producto        |
-| `PUT`    | `/api/productos/:id`    | Actualizar un producto   |
-| `DELETE` | `/api/productos/:id`    | Eliminar un producto     |
-### Carrito / Pedidos
-| Método   | Ruta                                  | Descripción                        |
-|----------|---------------------------------------|------------------------------------|
-| `POST`   | `/api/carrito`                        | Guardar pedido en MongoDB          |
-| `POST`   | `/api/carrito/mp/create_preference`   | Crear preferencia de Mercado Pago  |
----
 ## Base de datos (MongoDB Atlas)
 - **Base:** `ecommerce`
 - **Colecciones:**
@@ -120,11 +87,7 @@ Abrí el navegador en la URL que muestra Vite (normalmente `http://localhost:517
 - [x] Integración con Mercado Pago Checkout Pro (opcional)
 ---
 ## Links de entrega
-- **GitHub:** _https://github.com/aguselola/bootcampFullStack80978_
-- **Cloudinary Backend:** _https://bootcampfullstack80978.onrender.com_
-- **Cloudinary Frontend:** _https://bootcampfullstack80978.onrender.com_
----
-## Notas
-- El frontend usa un **Proxy** para mapear `producto.id` → `producto._id` (compatibilidad con MongoDB).
-- Mercado Pago funciona en **modo prueba** con credenciales de test y tarjetas de prueba.
-- Para pagos en local, después de pagar usar el botón **"Volver a la tienda"** en Mercado Pago.
+- **GitHub:** https://github.com/aguselola/bootcampFullStack80978
+- **Frontend (Render):** _https://bootcampfullstack80978-1.onrender.com_
+- **Backend (Render):** _(https://bootcampfullstack80978.onrender.com)_
+
