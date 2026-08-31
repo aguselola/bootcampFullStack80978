@@ -38,9 +38,7 @@ export function Index() {
     
     // Hook de Efecto de montado / desmontado
     useEffect(() => {
-        console.warn('Componente Alta (montado)')
-        
-        ; (async () => {
+        (async () => {
             try {
                 const productos = await servicioProductos.getAll()
                 setProductos(productos)
@@ -50,9 +48,6 @@ export function Index() {
             }
         })()
         
-        return () => {
-            console.warn('Componente Alta (desmontado)')
-        }
     }, [])
 
     function validarCampo(campo, valor) {
