@@ -1,8 +1,7 @@
 import axios from "axios";
 
 
-const url = 'http://localhost:3000/api/productos'
-
+const url = `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/productos`
 
 const getAll = async () => await axios.get(url).then(r => {
   const productos = r.data

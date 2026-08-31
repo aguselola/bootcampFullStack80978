@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const url = 'http://localhost:3000/api/carrito'
+const url = `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/productos`
 
 const enviar = async pedido => await axios.post(url, pedido, {
     headers: { 'content-type': 'application/json' }
