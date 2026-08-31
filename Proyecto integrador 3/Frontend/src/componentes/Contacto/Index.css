@@ -1,0 +1,120 @@
+main {
+    padding: 20px 0 50px;
+}
+
+#formulario p,
+#formularioContacto {
+    background-color: #D1B77D;
+}
+
+#formulario p:nth-child(1){
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+#formularioContacto{
+    padding-bottom: 10px;
+    width: 70%;
+    margin: auto;
+}
+
+#formularioContacto label{
+    text-align: left;
+    display: block;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    color: #743309;
+    
+}
+
+#formularioContacto input, #formularioContacto textarea{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #D1B77D;
+    border: 1px solid #743309;
+}
+
+#formularioContacto textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#formularioContacto div{
+    width: 70%;
+    margin: auto;
+}
+
+#formulario #formularioContacto button{
+    width: 50%;
+    height: 30px;
+    margin: 20px auto 0px;
+    border-radius: 5px;
+    background-color: #743309;
+    color: white;
+    font-family: "Playfair Display", sans-serif;
+}
+
+
+#separador{
+    width: 200px;
+    margin-top: 20px;
+}
+
+#formulario{
+    background-color: #D1B77D;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+
+::placeholder{
+    font-family: "Playfair Display", sans-serif;
+    color: white;
+    font-size: 15px;
+}
+
+@media (max-width: 780px) {
+    #formulario {
+        width: 90%;
+    }
+    #formularioContacto {
+        width: 100%;
+    }
+    #formularioContacto div,
+    #formularioContacto button {
+        width: 90%;
+    }
+}
+
+.input-group {
+    width: 70%;
+    margin: auto;
+}
+
+.form-ayuda {
+    display: block;
+    font-size: 13px;
+    color: #743309;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+.error-detail {
+    color: #8b0000;
+    font-size: 14px;
+    min-height: 18px;
+    text-align: left;
+}
+
+.mensaje-exito {
+    width: 70%;
+    margin: 15px auto 0;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #743309;
+    color: #FAF2F1;
+    font-weight: bold;
+}

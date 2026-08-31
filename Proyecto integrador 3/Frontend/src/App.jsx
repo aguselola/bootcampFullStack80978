@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router'
+import { useSelector, useDispatch } from 'react-redux'
+import { actionSetCantidad } from './state/actions'
 
 import './App.css'
 
@@ -15,8 +17,16 @@ import { Index as Otra } from './componentes/Otra/Index'
 
 function App() {
 
-  const cantidad = 2
-  return (
+    const cantidad = useSelector(state => state.carrito.cantidad)  
+    const dispatch = useDispatch()
+    useEffect(() => {
+        const carrito = JSON.parse(localStorage.getItem('carrito') || '[]')
+        const cantidad = carrito.reduce((acc, p) => acc + (p.cantidad || 1), 0)
+        dispatch(actionSetCantidad(cantidad))
+    }, [])
+
+
+    return (
     <>
 
       <BrowserRouter>
@@ -32,7 +42,7 @@ function App() {
                       <input type="submit" value="Buscar" />
                   </form>
               </div>
-              <Link to="/carrito" id="boton-carrito"><span className='cant-carrito'> {cantidad}</span><img src="/img/carritochagpt.png" alt="boton carrito" />   </Link>  
+              <Link to="/carrito" id="boton-carrito">{cantidad > 0 && <span className='cant-carrito'>{cantidad}</span>}<img src="/img/carritochagpt.png" alt="boton carrito" />   </Link>  
           </div>
         </header>
         <main>

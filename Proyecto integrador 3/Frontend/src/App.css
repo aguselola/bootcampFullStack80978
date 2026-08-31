@@ -3,8 +3,11 @@
     /* box-sizing: border-box; */
 }
 main {
-    height: auto;
+    flex: 1;
     background-image: url(./img/ChatGPT\ Image\ 28\ abr\ 2026\,\ 05_57_02\ p.m..png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
     text-align: center;
     padding: 25px;
 }
@@ -12,10 +15,20 @@ body, ul, h1, h3, p {
     margin: 0;
 }
 
-body {
-    font-family: "Playfair Display", sans-serif;
+html, body, #root {
+    min-height: 100vh;
+    margin: 0;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+body {
+    font-family: "Playfair Display", sans-serif;
+    background-color: #D1B77D;
+}
 header {
     width: 100%;
     height: auto;
@@ -110,15 +123,43 @@ header > div {
 }
 
 #boton-carrito {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 54px;
     width: 5%;
+    min-width: 54px;
     background-color: #FAF2F1;
-    text-align: center;
-    line-height: 54px;
-    font-size: 20px;
+    text-decoration: none;
 }
-#boton-carrito img{
+#boton-carrito img {
     height: 46px;
+    transition: transform 0.2s ease;
+}
+#boton-carrito:hover img {
+    transform: scale(1.08);
+}
+
+.cant-carrito {
+    position: absolute;
+    top: -2px;          
+    right: 2px;
+    min-width: 20px;    
+    height: 20px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #743309, #5A2506);
+    color: #FAF2F1;
+    font-size: 16px;   
+    font-weight: bold;
+    border-radius: 50%;
+    border: 1.5px solid #c4a96a;
+    box-shadow: 0 1px 4px rgba(90, 37, 6, 0.35);
+    z-index: 2;
+    line-height: 1;
 }
 
 #barra-busqueda form {
@@ -251,7 +292,13 @@ footer {
         right: 0;
         z-index: 10; 
     }
-    
+    .cant-carrito {
+        top: 2px;
+        right: 2px;
+        font-size: 11px;
+        min-width: 18px;
+        height: 18px;
+    }
     #barra-busqueda{
         width: 100%;
     }
@@ -334,7 +381,7 @@ footer {
     }
 }
 
-#cant-carrito{
+.cant-carrito{
     background-color: #5A2506;
     color: #c4a96a;
     padding: 5px;
