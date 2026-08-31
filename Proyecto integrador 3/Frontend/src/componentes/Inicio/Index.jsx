@@ -17,16 +17,11 @@ export function Index() {
 
     // Hook de Efecto de montado / desmontado
     useEffect(() => {
-        console.warn('Componente Inicio (montado)')
 
-            ; (async () => {
-                const productos = await servicioProductos.getAll()
-                setProductos(productos)
-            })()
-
-        return () => {
-            console.warn('Componente Inicio (desmontado)')
-        }
+        (async () => {
+            const productos = await servicioProductos.getAll()
+            setProductos(productos)
+        })()
     }, [])
 
     useEffect(() => {
