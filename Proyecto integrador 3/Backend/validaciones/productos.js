@@ -33,7 +33,9 @@ class Producto {
     };
     const { error } = productoSchema.validate(producto);
     if (error) {
-      throw new Error(error.details[0].message);
+      const err = new Error(error.details[0].message);
+      err.name = 'ValidationError';
+      throw err;
     }
   }
 }

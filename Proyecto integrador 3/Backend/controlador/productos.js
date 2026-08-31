@@ -31,6 +31,9 @@ export async function crearProducto(req, res) {
     res.status(201).json(producto);
   } catch (error) {
     console.error(error);
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ error: error.message });
+    }
     res.status(500).json({ error: 'Error al crear el producto' });
   }
 }
@@ -45,6 +48,9 @@ export async function actualizarProducto(req, res) {
     res.json(producto);
   } catch (error) {
     console.error(error);
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ error: error.message });
+    }
     res.status(500).json({ error: 'Error al actualizar el producto' });
   }
 }

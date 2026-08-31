@@ -10,15 +10,29 @@ class ServicioProductos {
   }
 
   async guardarProducto(datos) {
-    const producto = new Producto(datos);
+    const datosNormalizados = {
+      ...datos,
+      precio: Number(datos.precio),
+      stock: parseInt(datos.stock, 10),
+      envio: Boolean(datos.envio),
+      detalles: datos.detalles ?? '',
+    };
+    const producto = new Producto(datosNormalizados);
     producto.validar();
-    return ProductoModel.crear(datos);
+    return ProductoModel.crear(datosNormalizados);
   }
 
   async actualizarProducto(id, datos) {
-    const producto = new Producto(datos);
+    const datosNormalizados = {
+      ...datos,
+      precio: Number(datos.precio),
+      stock: parseInt(datos.stock, 10),
+      envio: Boolean(datos.envio),
+      detalles: datos.detalles ?? '',
+    };
+    const producto = new Producto(datosNormalizados);
     producto.validar();
-    const actualizado = await ProductoModel.actualizar(id, datos);
+    const actualizado = await ProductoModel.actualizar(id, datosNormalizados);
     if (!actualizado) return null;
     return ProductoModel.obtenerPorId(id);
   }

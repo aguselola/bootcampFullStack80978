@@ -59,6 +59,8 @@ export function Index() {
         switch (campo) {
             case 'nombre':
                 if (!valor?.trim()) return 'El nombre es obligatorio'
+                if (valor.trim().length < 3) return 'El nombre debe tener al menos 3 caracteres'
+                if (valor.trim().length > 20) return 'El nombre no puede superar 20 caracteres'
                 break
             case 'precio':
                 if (valor === '' || isNaN(valor) || valor < 0)
@@ -67,6 +69,8 @@ export function Index() {
             case 'stock':
                 if (valor === '' || isNaN(valor) || valor < 0)
                     return 'El stock es obligatorio y debe ser un número válido'
+                if (!Number.isInteger(Number(valor)))
+                    return 'El stock debe ser un número entero'
                 break
             case 'marca':
                 if (!valor?.trim()) return 'La marca es obligatoria'
@@ -126,10 +130,12 @@ export function Index() {
             setErrores(erroresClear)
         } catch (error) {
             console.error('Error al guardar producto', error)
+            const mensajeServidor = error.response?.data?.error
             setModalError(
-                editarID
+                mensajeServidor ||
+                (editarID
                     ? 'No se pudo actualizar el producto. Intentá de nuevo en unos momentos.'
-                    : 'No se pudo guardar el producto. Intentá de nuevo en unos momentos.'
+                    : 'No se pudo guardar el producto. Intentá de nuevo en unos momentos.')
             )
         } finally {
             setGuardando(false)
