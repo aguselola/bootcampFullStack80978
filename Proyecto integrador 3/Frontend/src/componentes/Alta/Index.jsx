@@ -332,7 +332,7 @@ export function Index() {
                         {
                             productos.map((producto, i) =>
                                 <tr key={i}>
-                                    <td className="centrar">{producto.id}</td>
+                                    <td className="centrar">{i+1}</td>
                                     <td>{producto.nombre}</td>
                                     <td className="centrar">${producto.precio}</td>
                                     <td className="centrar">{producto.stock}</td>
